@@ -28,48 +28,56 @@
             android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="CajaActivity" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="cajaShakiraActivity" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="DaLaVueltaActivity" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="ImagenActivity" />
 
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="IMCActivity" />
 
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="MiLinearLayout" />
 
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="VersionActivity" />
 
         <RadioButton
             android:id="@+id/radioButton8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="botonMenuTocado"
             android:text="VictoriaActivity" />
     </RadioGroup>
 

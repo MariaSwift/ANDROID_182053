@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,9 +13,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Locale;
 
 public class MenuDeEntradaALaAPP extends AppCompatActivity {
 
@@ -28,7 +33,7 @@ public class MenuDeEntradaALaAPP extends AppCompatActivity {
     private static String RESPUESTA_BUENA7 = "version activity";
     private static String RESPUESTA_BUENA8 = "victotia activity";
 
-    private static String URL_VIDEO_YOUTUBE = "https://youtu.be/Yxd5qU_XvKc";
+    private static String URL_VIDEO_YOUTUBE = "https://youtube/Yxd5qU_XvKc";
     private static String PREGUNTA = "¿Qué quieres reina?";
     private MediaPlayer mediaPlayer;
 
@@ -222,5 +227,87 @@ public class MenuDeEntradaALaAPP extends AppCompatActivity {
         }
     }
 
+    public void botonMenuTocado(View view) {
+        Log.d("MIAPP", "BOTON MENU TOCADO");
+
+        RadioButton radioButtonTocado = (RadioButton) view;//casting
+
+        String actividad = String.valueOf(radioButtonTocado.getText());
+        Intent intent;
+        switch (actividad)
+        {
+            case "CajaActivity":
+                Log.d("MITAPP", "RESPUESTA BUENA1");
+                Toast.makeText(this, "RESPUESTA BUENA1", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, CajaActivity.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            case "cajaShakiraActivity":
+                Log.d("MITAPP", "RESPUESTA BUENA2");
+                Toast.makeText(this, "RESPUESTA BUENA2", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, CajaShakiraActivity.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            case "DaLaVueltaActivity":
+                Log.d("MITAPP", "RESPUESTA BUENA3");
+                Toast.makeText(this, "RESPUESTA BUENA3", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, DaLaVueltaActivity.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            case "IMCActivity":
+                Log.d("MITAPP", "RESPUESTA BUENA4");
+                Toast.makeText(this, "RESPUESTA BUENA4", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, IMCActivity.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            case "ImagenActivity":
+                Log.d("MITAPP", "RESPUESTA BUENA5");
+                Toast.makeText(this, "RESPUESTA BUENA5", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, ImagenActivity.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            case "MiLinearLayout":
+                Log.d("MITAPP", "RESPUESTA BUENA6");
+                Toast.makeText(this, "RESPUESTA BUENA6", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, MiLinearLayout.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            case "VersionActivity":
+                Log.d("MITAPP", "RESPUESTA BUENA7");
+                Toast.makeText(this, "RESPUESTA BUENA7", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, VersionActivity.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            case "VictoriaActivity":
+                Log.d("MITAPP", "RESPUESTA BUENA8");
+                Toast.makeText(this, "RESPUESTA BUENA8", Toast.LENGTH_SHORT).show();
+                //preparo el intent
+                intent = new Intent(this, VictoriaActivity.class);
+                //lanzo
+                startActivity(intent);
+                break;
+            default:
+                Log.d("MIAPP", "RESPUESTA MALA");
+                Toast.makeText(this, "RESPUESTA MALA", Toast.LENGTH_SHORT).show();
+                mediaPlayer = MediaPlayer.create(this, R.raw.dennis_2);
+                mediaPlayer.setLooping(false);
+                mediaPlayer.setVolume(100, 100);
+                mediaPlayer.start();
+        }
+    }
 }
 

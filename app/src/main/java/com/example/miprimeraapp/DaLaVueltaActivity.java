@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +29,32 @@ public class DaLaVueltaActivity extends AppCompatActivity {
             TextView caja_salida = findViewById(R.id.caja_salida);
             caja_salida.setText(palabra_guardada);
         }
+
+        dibujarFlechaAtras();
+    }
+
+    private void dibujarFlechaAtras() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);//dibujo la flecha
+    }
+
+    //ESTE MÉTODO SE INVOCA AL TOCAR UNA OPCIÓN DEL MENÚ
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Log.d("MIAPP", "Se ha tocado un elemento de la barra/menú");
+
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                Log.d("MIAPP", "Ha tocado la flecha de para atrás");
+                finish();
+                break;
+
+            case R.id.buscar:
+                Log.d("MIAPP", "Ha tocado la opción de buscar");
+                break;
+        }
+
+        return true;//super.onOptionsItemSelected(item);
     }
 
     @Override
